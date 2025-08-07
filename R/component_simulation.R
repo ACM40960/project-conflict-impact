@@ -84,9 +84,20 @@ summary_df <- data.frame(
 
 # Reshape to long format for ggplot
 summary_long <- melt(summary_df, id.vars = "scenario", variable.name = "vehicle", value.name = "emissions")
-# ---- Stacked Bar Plot ----
+# ---- Compute Percentages ----
+# Total emissions per scenario
+totals <- summary_long %>%
+  group_by(scenario) %>%
+  summarise(total = sum(emissions))
+
+# Join totals and compute percent
+summary_long <- summary_long %>%
+  left_join(totals, by = "scenario") %>%
+  mutate(percent = round(100 * emissions / total, 1),
+         label = paste0(percent, "%"))
 stacked_plot <- ggplot(summary_long, aes(x = scenario, y = emissions, fill = vehicle)) +
   geom_bar(stat = "identity") +
+  geom_text(aes(label = label), position = position_stack(vjust = 0.5), color = "white", size = 5) +
   labs(title = "Mean Emissions by Vehicle Type per Scenario",
        x = "Conflict Scenario",
        y = "Mean Emissions (kg CO₂)",
