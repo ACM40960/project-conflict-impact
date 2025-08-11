@@ -1,0 +1,5 @@
+fuel_type,unit,value
+Gasoline (Petrol),kg_CO2_per_liter,2.31
+Diesel,kg_CO2_per_liter,2.63
+Jet A-1 (aviation kerosene),kg_CO2_per_liter,2.63
+Jet fuel (by mass),kg_CO2_per_kg,3.16
