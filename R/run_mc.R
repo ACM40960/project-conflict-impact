@@ -102,8 +102,12 @@ simulate_one_draw <- function(pmat_sc){
   
   # fleet size variability per class
   fleet_draw <- vapply(seq_len(nrow(pmat_sc)), function(i){
-    f <- pmat_sc$fleet_size__val_num[i]
-    if (is.na(f)) f <- 0
+    if ("fleet_size__val_num" %in% names(pmat_sc)) {
+      f <- pmat_sc$fleet_size__val_num[i]
+    } else {
+      f <- NA_real_
+    }
+    if (length(f) == 0 || is.na(f)) f <- 0
     f * runif(1, 1 - FLEET_VAR_PCT, 1 + FLEET_VAR_PCT)
   }, numeric(1))
   
@@ -167,6 +171,18 @@ run_mc <- function(n_draws = MC_N_DRAWS, seed = MC_SEED,
   dat  <- read_inputs(params_path, efs_path)
   pmat <- build_matrix(dat$params, dat$efs)
   
+  # ---- ensure expected numeric columns exist 
+  needed_cols <- c(
+    "fleet_size__val_num","duty_cycle__val_num",
+    "km_day_min__val_num","km_day_max__val_num",
+    "fuel_eff_l_per_km__val_num","idle_l_per_hr__val_num",
+    "hr_day_min__val_num","hr_day_max__val_num",
+    "fuel_eff_l_per_hr__val_num"
+  )
+  for (nm in needed_cols) {
+    if (!nm %in% names(pmat)) pmat[[nm]] <- NA_real_
+  }
+  
   all <- lapply(unique(pmat$scenario), function(sc){
     sub <- pmat |> filter(scenario==sc)
     draws <- lapply(seq_len(n_draws), function(d){
@@ -174,6 +190,20 @@ run_mc <- function(n_draws = MC_N_DRAWS, seed = MC_SEED,
     })
     bind_rows(draws)
   }) |> bind_rows()
+  
+  # ---- per-draw totals BY CLASS (for fuel logistics MC) ----
+  totals_draws_by_class <- all |>
+    dplyr::group_by(scenario, class, draw) |>
+    dplyr::summarise(total_kgCO2 = sum(emissions_kgCO2), .groups = "drop")
+  
+  readr::write_csv(totals_draws_by_class, file.path(out_dir, "mc_totals_draws_by_class.csv"))
+  
+  totals_per_draw <- all |>
+    dplyr::group_by(scenario, draw) |>
+    dplyr::summarise(total = sum(emissions_kgCO2), .groups = "drop")
+  
+  # write per-draw totals for F7
+  readr::write_csv(totals_per_draw, file.path(out_dir, "mc_totals_draws.csv"))
   
   by_day <- all |>
     group_by(scenario, day) |>

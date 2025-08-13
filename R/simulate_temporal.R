@@ -5,7 +5,7 @@ suppressPackageStartupMessages({
 
 # Fixed paths per our structure
 PARAMS_CSV <- "data/parameters.csv"
-EFS_CSV    <- "data/emission_factors"
+EFS_CSV    <- "data/emission_factors.csv"
 OUT_DIR    <- "outputs"
 
 .ensure_dir <- function(p) if (!dir.exists(p)) dir.create(p, recursive = TRUE, showWarnings = FALSE)

@@ -66,7 +66,7 @@ p <- ggplot(df_long, aes(x = scenario, y = value, fill = variable)) +
   geom_boxplot(outlier.size = 0.3, width = 0.6, alpha = 0.85) +
   labs(title = "Vehicle-wise Emissions by Scenario",
        x = "Conflict Scenario",
-       y = "Emissions (kg CO₂)",
+       y = "Emissions (kg CO2)",
        fill = "Vehicle Type") +
   theme_minimal(base_size = 14)
 
@@ -100,7 +100,7 @@ stacked_plot <- ggplot(summary_long, aes(x = scenario, y = emissions, fill = veh
   geom_text(aes(label = label), position = position_stack(vjust = 0.5), color = "white", size = 5) +
   labs(title = "Mean Emissions by Vehicle Type per Scenario",
        x = "Conflict Scenario",
-       y = "Mean Emissions (kg CO₂)",
+       y = "Mean Emissions (kg CO2)",
        fill = "Vehicle Type") +
   theme_minimal(base_size = 14)
 
