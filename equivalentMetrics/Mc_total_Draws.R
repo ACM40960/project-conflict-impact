@@ -1,22 +1,25 @@
 library(ggplot2)
+library(dplyr)
 
-# Data
-war_emissions <- data.frame(
-  Scenario    = c("A", "B", "C"),
-  total_kgCO2 = c(3332578.2, 2536033.3875, 856577.85)
-)
+# Load CSV
+war_emissions <- read.csv("outputs/mc_totals_draws.csv")
 
-# Tree absorption rate (kg CO2/year per mature tree)
-kg_per_tree <- 21  # FAO / USDA
+# Summarize (average total per scenario)
+war_emissions_summary <- war_emissions %>%
+  group_by(scenario) %>%
+  summarise(total_kgCO2 = mean(total))
+
+# Tree absorption rate - Source : FAO/USDA
+kg_per_tree <- 21
 
 # Calculate required trees
-war_emissions$trees_needed <- war_emissions$total_kgCO2 / kg_per_tree
+war_emissions_summary$trees_needed <- war_emissions_summary$total_kgCO2 / kg_per_tree
 
 # Prevent scientific notation
 options(scipen = 999)
 
-# Plot
-ggplot(war_emissions, aes(x = Scenario, y = trees_needed, fill = Scenario)) +
+# Create plot
+p_trees <- ggplot(war_emissions_summary, aes(x = scenario, y = trees_needed, fill = scenario)) +
   geom_bar(stat = "identity") +
   geom_text(aes(label = format(round(trees_needed, 0), big.mark = ",")), 
             vjust = -0.5, size = 4) +
@@ -27,3 +30,6 @@ ggplot(war_emissions, aes(x = Scenario, y = trees_needed, fill = Scenario)) +
   ) +
   theme_minimal() +
   theme(legend.position = "none")
+
+# Save plot for poster
+ggsave("plots/trees_equivalent.png", plot = p_trees, width = 10, height = 6, dpi = 300)
