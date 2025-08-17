@@ -24,8 +24,8 @@ scenario_summary <- df %>%
 
 print(scenario_summary)
 
-# Plot: Cars that could run for a year
-ggplot(scenario_summary, aes(x = scenario, y = cars_equivalent)) +
+# Create plot
+p_cars <- ggplot(scenario_summary, aes(x = scenario, y = cars_equivalent)) +
   geom_col(fill = "steelblue") +
   geom_text(aes(label = comma(round(cars_equivalent, 0))),
             vjust = -0.3, size = 4) +
@@ -37,3 +37,6 @@ ggplot(scenario_summary, aes(x = scenario, y = cars_equivalent)) +
     y = "Number of cars (annual equivalent)"
   ) +
   theme_minimal()
+
+# Save plots for poster
+ggsave("plots/cars_equivalent.png", plot = p_cars, width = 10, height = 6, dpi = 300)
