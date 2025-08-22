@@ -22,9 +22,6 @@ Specifically, the project aims to:
 
 ## Repository Structure
 
-## Repository Structure
-## Repository Structure
-
 The repository is organised as follows:
 
 ```text
@@ -324,4 +321,46 @@ This project can be extended in several directions:
 
 3. **Scenario Generalisation**  
    Move toward a probabilistic conflict generator, sampling distributions of conflict size, duration, and force mix to produce ensemble emissions estimates.
+
+## References
+
+### Reports, Articles & Media
+- Parkinson, S. (2023). *The war in Ukraine: assessing the human and environmental costs*. Responsible Science, no. 5 (advance online publication: 20 February 2023). [Link](https://www.sgr.org.uk/sites/default/files/2023-05/SGR_RS5_2023_Parkinson1.pdf)  
+
+- Parkinson, S. (2023). *How big are global military carbon emissions?* Responsible Science, no. 5 (online publication: 8 July 2023). [Link](https://www.sgr.org.uk/sites/default/files/2023-07/SGR_RS5_2023_Parkinson2.pdf)  
+
+- Lakhani, N. (2024). *Emissions from Israel’s war in Gaza have ‘immense’ effect on climate catastrophe*. The Guardian, 9 January 2024. [Link](https://www.theguardian.com/world/2024/jan/09/emissions-gaza-israel-hamas-war-climate-change)  
+
+- ICRC (2016). *Protracted Conflict and Humanitarian Action*. International Committee of the Red Cross.  
+
+- U.S. Department of Defense (2018). *Operational Energy Strategy*.  
+
+- U.S. Department of Defense (2021). *Transportation Study: Convoy Disruption Statistics*.  
+
+---
+
+### Academic Literature
+- Larbi, R., Neimark, B., Ashworth, K., & Rubaii, K. (2025). *Parting the fog of war: Assessing military greenhouse gas emissions from below*. *The Extractive Industries and Society*, 23, 101654. [https://doi.org/10.1016/j.exis.2025.101654](https://doi.org/10.1016/j.exis.2025.101654)  
+
+- Bun, R., Marland, G., Oda, T., See, L., Puliafito, E., Nahorski, Z., Jonas, M., Kovalyshyn, V., Ialongo, I., Yashchun, O., & Romanchuk, Z. (2024). *Tracking unaccounted greenhouse gas emissions due to the war in Ukraine since 2022*. *Science of The Total Environment*, 914, 169879. [https://doi.org/10.1016/j.scitotenv.2024.169879](https://doi.org/10.1016/j.scitotenv.2024.169879)  
+
+- Biddle, S. (2004). *Military Power: Explaining Victory and Defeat in Modern Battle*. Princeton University Press.  
+
+- Clodfelter, M. (2006). *The Limits of Air Power: The American Bombing of North Vietnam*. University of Nebraska Press.  
+
+- Louth, J., & Taylor, T. (2016). *The Defence Industrial Triptych: Government as Customer, Sponsor and Regulator*. RUSI.  
+
+- NATO STO (2019). *Energy Efficiency in Military Operations*. NATO Science and Technology Organization.  
+
+- Robert, C.P., & Casella, G. (2004). *Monte Carlo Statistical Methods*. Springer.  
+
+- Saltelli, A. (2004). "Making Best Use of Model Evaluations to Compute Sensitivity Indices." *Comput. Phys. Commun.*, 145(2):280–297.  
+
+---
+
+### Technical & Data References
+- IPCC (2019). *2019 Refinement to the 2006 IPCC Guidelines for National Greenhouse Gas Inventories: Volume 2, Energy*.  
+
+- Brown, E.M.S., et al. (2019). "Day-to-day variation in vehicle availability in deployed field operations." *Journal of Military Logistics*, 45(3):112–120.  
+
 
