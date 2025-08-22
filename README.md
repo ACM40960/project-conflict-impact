@@ -75,6 +75,32 @@ The repository is organised as follows:
 ├── README.md                    # project description and instructions
 └── (others)                     # utility scripts or documentation files
 ```
+## How to Run
+
+All scripts are written in **R**. Run all commands from the repository root (the folder containing `R/`, `data/`, `outputs/`, and `plots/`).
+
+### 1. Install dependencies
+Rscript -e 'install.packages(c("readr","dplyr","data.table","ggplot2","truncnorm"))'
+
+### 2. Run the Monte Carlo simulations
+Generates the core tables in `outputs/`:
+Rscript R/run_mc.R
+
+### 3. Generate plots
+Produces visualisations in `plots/`:
+Rscript R/plot_results.R
+
+### 4. (Optional) Sensitivity and temporal runs
+Rscript R/run_sensitivity.R  
+Rscript R/run_phasing_mc.R  
+Rscript R/temporal_analysis.R  
+
+### Notes
+- Outputs in `outputs/` and figures in `plots/` are **overwritten** on each run.  
+- For reproducibility, set a seed inside scripts (e.g., `set.seed(1234)`) or via environment.  
+- Always run from the **repo root** so relative paths resolve correctly.
+
+
 ## Outputs
 
 All generated artefacts are written to `outputs/` (tables) and `plots/` (figures).  
