@@ -2,7 +2,7 @@
  </h1>
 
 This repository quantifies the additional CO₂ emissions attributable to armed conflict, using modular simulations of infrastructure damage, fuel logistics, temporal dynamics, and scenario analysis.
-
+<img src="Appendix/assets/ezgif-789836f026362a.jpg"></img>
 ## Scope and Motivation
 
 Vehicle fuel use is one of the most consistently measurable and universally relevant sources of CO₂ emissions in armed conflicts. Unlike many other contributing factors—such as infrastructure destruction, land-use change, or displaced population flows—fuel consumption can be quantified using relatively standardised operational parameters (fleet size, fuel efficiency, activity levels) and well-documented emission factors. 
