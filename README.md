@@ -16,7 +16,6 @@ This repository quantifies CO₂ emissions from fuel use in armed conflict, usin
 - [Outputs](#outputs)
 - [Limitations](#limitations)
 - [Future Extensions](#future-extensions)
-- [Difference from a Probabilistic Conflict Generator](#difference-from-a-probabilistic-conflict-generator)
 - [References](#references)
 
 ## Scope and Motivation
