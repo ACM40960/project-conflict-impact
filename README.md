@@ -1,8 +1,9 @@
 <h1 align="center"> Conflict CO₂ Impact Simulator
  </h1>
 
-This repository quantifies the additional CO₂ emissions attributable to armed conflict, using modular simulations of infrastructure damage, fuel logistics, temporal dynamics, and scenario analysis.
+This repository quantifies CO₂ emissions from fuel use in armed conflict, using modular simulations of vehicle activity, logistics (tanker operations), temporal phasing, and Monte Carlo uncertainty.
 <img src="Appendix/assets/ezgif-789836f026362a.jpg"></img>
+
 ## Scope and Motivation
 
 Vehicle fuel use is one of the most consistently measurable and universally relevant sources of CO₂ emissions in armed conflicts. Unlike many other contributing factors—such as infrastructure destruction, land-use change, or displaced population flows—fuel consumption can be quantified using relatively standardised operational parameters (fleet size, fuel efficiency, activity levels) and well-documented emission factors. 
@@ -11,14 +12,12 @@ This makes it possible to model a range of scenarios with transparency, reproduc
 
 ## Objectives
 
-The objective of this project is to implement a modular simulation framework to estimate the CO₂ emissions associated with armed conflict. 
-Specifically, the project aims to:
+The objective of this project is to implement a modular, fuel-focused simulation framework for conflict emissions. Specifically, we aim to:
 
-1. Develop component-level models for emissions from destruction and reconstruction.  
-2. Incorporate modules for fuel logistics and marginal per-vehicle emissions.  
-3. Implement Monte Carlo methods to propagate parameter uncertainty.  
-4. Analyse temporal dynamics through phase length sampling and daily emission bands.  
-5. Produce reproducible outputs (CSV summaries and figures) that allow comparison across conflict scenarios.
+1. Build modules for **logistics (tanker)** and **per-vehicle** fuel-use emissions.
+2. Implement **Monte Carlo** sampling to propagate parameter uncertainty.
+3. Model **temporal phasing** (ramp-up, steady, wind-down) to produce daily trajectories.
+4. Generate reproducible **outputs** (CSV summaries and figures) for scenario comparison.
 
 ## Repository Structure
 
@@ -117,6 +116,7 @@ Common outputs include:
 ## Methodology 
 
 The emissions model is based entirely on fuel use. We distinguish between two activity types: vehicles that are tracked by kilometres travelled, and tankers that are tracked by the amount of fuel they deliver.
+<img src="Appendix/assets/method.png"></img>
 
 ### A. Distance-based activity (per-kilometre)
 For standard vehicles, total emissions are obtained by multiplying the distance travelled by the vehicle’s fuel intensity (litres per kilometre) and then by the emission factor of the fuel (kilograms of CO₂ per litre). The results are summed across vehicle classes and converted from kilograms to tonnes of CO₂ by dividing by one thousand.
