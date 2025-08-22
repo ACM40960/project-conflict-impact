@@ -4,6 +4,21 @@
 This repository quantifies CO₂ emissions from fuel use in armed conflict, using modular simulations of vehicle activity, logistics (tanker operations), temporal phasing, and Monte Carlo uncertainty.
 <img src="Appendix/assets/ezgif-789836f026362a.jpg"></img>
 
+## Table of Contents
+- [Scope and Motivation](#scope-and-motivation)
+- [Objectives](#objectives)
+- [Repository Structure](#repository-structure)
+- [Inputs](#input-data)
+- [Methodology](#methodology)
+- [Monte Carlo — Draw Construction](#monte-carlo--draw-construction)
+- [Uncertainty Design & Rationale](#uncertainty-design--rationale)
+- [Campaign Phases](#campaign-phases)
+- [Outputs](#outputs)
+- [Limitations](#limitations)
+- [Future Extensions](#future-extensions)
+- [Difference from a Probabilistic Conflict Generator](#difference-from-a-probabilistic-conflict-generator)
+- [References](#references)
+
 ## Scope and Motivation
 
 Vehicle fuel use is one of the most consistently measurable and universally relevant sources of CO₂ emissions in armed conflicts. Unlike many other contributing factors—such as infrastructure destruction, land-use change, or displaced population flows—fuel consumption can be quantified using relatively standardised operational parameters (fleet size, fuel efficiency, activity levels) and well-documented emission factors. 
