@@ -5,18 +5,23 @@ This repository quantifies CO₂ emissions from fuel use in armed conflict, usin
 <img src="Appendix/assets/ezgif-789836f026362a.jpg"></img>
 
 ## Table of Contents
-- [Scope and Motivation](#scope-and-motivation)
-- [Objectives](#objectives)
-- [Repository Structure](#repository-structure)
-- [Inputs](#input-data)
-- [Methodology](#methodology)
-- [Monte Carlo — Draw Construction](#monte-carlo--draw-construction)
-- [Uncertainty Design & Rationale](#uncertainty-design--rationale)
-- [Campaign Phases](#campaign-phases)
-- [Outputs](#outputs)
-- [Limitations](#limitations)
-- [Future Extensions](#future-extensions)
-- [References](#references)
+
+1. [Scope and Motivation](#scope-and-motivation)  
+2. [Objectives](#objectives)  
+3. [Repository Structure](#repository-structure)  
+4. [How to Run](#how-to-run)  
+5. [Outputs](#outputs)  
+6. [Methodology](#methodology)  
+7. [Monte Carlo — Draw Construction](#monte-carlo--draw-construction)  
+8. [Uncertainty Design & Rationale](#uncertainty-design--rationale)  
+9. [Input Data](#input-data)  
+10. [Vehicle and Activity Parameters](#vehicle-and-activity-parameters)  
+11. [Fuel Properties](#fuel-properties)  
+12. [Campaign Phases](#campaign-phases)  
+13. [Limitations](#limitations)  
+14. [Future Extensions](#future-extensions)  
+15. [References](#references)  
+
 
 ## Scope and Motivation
 
