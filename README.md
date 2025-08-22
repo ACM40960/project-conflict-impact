@@ -471,14 +471,6 @@ USDA / Arbor Day Foundation estimates show a mature tree absorbs about 48 lb CO�
 `plots/cars_equivalent.png` (10×6 in, 300 dpi)
 
 ---
-
-## Reproducibility & Notes
-- Ensure all three input CSVs exist in `outputs/` with the required columns.  
-- All plots hide legends (one bar per scenario) and write to `plots/`.  
-- If you change benchmarks (e.g., new CSO/ICCT figure), update constants at the top of each script and re-run.  
-- Units are **kg CO₂** and the scripts handle conversions (kg → tonnes, kg → units) internally.  
-
----
 ## Future Extensions
 
 This project can be extended in several directions:
