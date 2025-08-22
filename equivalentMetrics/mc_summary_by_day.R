@@ -1,3 +1,35 @@
+# ==============================================================================
+# File: R/mc_summary_by_day.R
+# Purpose: Convert daily Monte Carlo CO2 results into smartphone-equivalent units
+#          and save a poster-ready bar chart.
+#
+# Inputs:
+#   - outputs/mc_summary_by_day.csv
+#       (must contain 'scenario' and 'med' = median daily kgCO2 emissions)
+#
+# Assumptions / constants:
+#   - co2_per_phone = 48 kg CO2 per smartphone (2025 benchmark estimate)
+#
+# Processing:
+#   - Aggregate daily median emissions by scenario (sum of 'med' column)
+#   - Convert total kg CO2 into smartphone equivalents
+#
+# Outputs:
+#   - Console: summary table of total emissions and smartphone equivalents
+#   - plots/smartphones_equivalent.png (10x6 in, 300 dpi)
+#
+# How to run:
+#   - Ensure packages: ggplot2, scales, dplyr
+#   - Ensure 'outputs/mc_summary_by_day.csv' exists
+#   - From project root: source("R/mc_summary_by_day.R")
+#
+# Notes:
+#   - Units: input = kg CO2; output converted to number of smartphones
+#   - Scope: smartphone CO2 benchmark (48 kg) based on 2025 manufacturing footprint
+#   - Plot labels rounded to whole smartphones, axis formatted with commas
+#   - Create 'plots/' directory before running to avoid ggsave() errors
+# ==============================================================================
+
 library(ggplot2)
 library(scales)
 library(dplyr)
