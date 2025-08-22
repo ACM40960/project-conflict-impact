@@ -1,7 +1,7 @@
 # Equivalent Metrics
 
 ## Overview
-These codes turn war-related CO₂ results from Monte Carlo (MC) simulations into intuitive equivalences for a poster/report:
+These codes turn war-related CO₂ results from Monte Carlo (MC) simulations into intuitive equivalences:
 
 - **Trees** needed to offset emissions (annual mature-tree sequestration).  
 - **Smartphones** manufactured with the same CO₂ footprint.  
