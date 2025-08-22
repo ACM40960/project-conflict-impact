@@ -10,7 +10,7 @@ OUT_DIR_P  <- "plots"
 
 .ensure_dir <- function(p) if (!dir.exists(p)) dir.create(p, recursive = TRUE, showWarnings = FALSE)
 
-# ---------- helpers reused from earlier modules (lightweight copies) ----------
+# ---------- helpers reused from earlier modules ----------
 load_inputs <- function(params_path = PARAMS_CSV, efs_path = EFS_CSV){
   params <- read_csv(params_path, show_col_types = FALSE)
   efs    <- read_csv(efs_path, show_col_types = FALSE) |> rename(co2_per_unit = value)
