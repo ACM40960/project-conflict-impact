@@ -1,4 +1,4 @@
-# Equivalent Metrics – README
+# Equivalent Metrics
 
 ## Overview
 These codes turn war-related CO₂ results from Monte Carlo (MC) simulations into intuitive equivalences for a poster/report:
